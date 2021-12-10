@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		System.out.print("Enter the Array Size: ");
+		int n =in.nextInt();
+		int[] arr=new int[n];
+		System.out.print("Enter the Array Elements: ");
+		for(int i=0;i<arr.length;i++)
+		{
+		    arr[i]=in.nextInt();
+		}
+		insertionSort(arr);
+		System.out.println(Arrays.toString(arr));
+     
+    }
+    
+    static void insertionSort(int[] arr)
+    {
+    	for(int i=0;i<arr.length-1;i++)
+     	{
+     	   for(int j=i+1;j>0;j--)
+     	   {
+     	       if(arr[j]<arr[j-1])
+     	       {
+     	           swapArray(arr,j,j-1);
+     	       }
+     	       else{
+     	           break;
+     	       }
+     	   }
+     	}
+     	
+    }
+
+    static void swapArray(int[] arr, int first, int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}
