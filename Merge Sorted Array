@@ -1,0 +1,55 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		System.out.print("Enter the Size of Array 1: ");
+		int m=in.nextInt();
+		int[] arr1=new int[m];
+		System.out.print("Enter the Size of Array 2: ");
+		int n=in.nextInt();
+		int[] arr2=new int[n];
+		System.out.print("Enter the Array 1 Elements: ");
+		for(int i=0;i<arr1.length;i++)
+		{
+		    arr1[i]=in.nextInt();
+		}
+		System.out.print("Enter the Array 2 Elements: ");
+		for(int i=0;i<arr2.length;i++)
+		{
+		    arr2[i]=in.nextInt();
+		}
+		merge(arr1,m,arr2,n);
+	}
+	
+	
+	  static void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        int k=m+n;
+        int[] nums3= new int[k];
+        for(int i=0;i<m;i++)
+        {
+           nums3[i]=nums1[i];
+        }
+        int a=m;
+        for(int j=0;j<n;j++)
+        {
+            nums3[a]=nums2[j];
+            a++;
+        }
+         for(int i=0;i<k;i++)
+        {
+             for(int j=0;j<k;j++)
+             {
+                if(nums3[i]<=nums3[j])
+                {
+                    int temp=nums3[i];
+                    nums3[i]=nums3[j];
+                    nums3[j]=temp;
+                }
+             }
+        }
+       System.out.println(Arrays.toString(nums3));   
+    }
+}
