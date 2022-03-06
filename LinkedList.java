@@ -22,7 +22,7 @@ public class LinkedList {
 
     void InsertLast(int val) {
         Node temp = head;
-        if( temp.next != null) {
+        while( temp.next != null) {
             temp = temp.next;
         }
         Node node = new Node(val);
@@ -33,7 +33,7 @@ public class LinkedList {
 
     void print(){
         Node temp = head;
-        if(temp.next != null){
+        while(temp != null){
             System.out.print(temp.data +" -> ");
             temp = temp.next;
         }
