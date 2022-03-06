@@ -13,7 +13,7 @@ class Student{
         this.dept = dept;
     }
 
-    public String toString(){
+    public String display(){
         return  "Name :" + name + "  Age :" + age + "  Id :" + id + "  Dept :" + dept;
     }
 }
@@ -29,7 +29,7 @@ class Address{
         this.district = district;
     }
 
-    public String toString(){
+    public String display(){
         return "Door_No :" + door_no + "  Village :" +village + "  District :" +district;
     }
 }
@@ -62,8 +62,8 @@ public class StudentData {
         for(int i = 0 ; i < s.length ; i++)
         {
             System.out.println("Student " + ++n);
-            System.out.println(s[i].toString());
-            System.out.println(a[i].toString());
+            System.out.println(s[i].display());
+            System.out.println(a[i].display());
             System.out.println();
         }
     }
